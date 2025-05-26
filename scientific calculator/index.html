@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scientific calculator</title>
+</head>
+<body>
+    <div id="calculator">
+        <input type="text" name="display" id="display">
+        <div class="button">
+            <div class="row">
+                <button onClick="clearDisplay()">CE</button>
+                <button onClick="append('(')">(</button>
+                <button onClick="append(')')">)</button>
+                <button onClick="append('/')">/</button>
+            </div>
+            <div class="row">
+                <button onClick="calculateFunc('sin')">sin</button>
+                <button onClick="calculateFunc('cos')">cos</button>
+                <button onClick="calculateFunc('tan')">tan</button>
+                <button onClick="calculateFunc('log')">log</button>
+            </div>
+            <div class="row">
+                <button onClick="calculateFunc('sqr')">x<sup>2</sup></button>
+                <button onClick="calculateFunc('cub')">x<sup>3</sup></button>
+                <button onClick="calculateFunc('sqrt')">&radic;</button>
+                <button onClick="calculateFunc('cbrt')">&#8731;</button>
+            </div>
+            <div class="row">
+                <button onClick="append('7')">7</button>
+                <button onClick="append('8')">8</button>
+                <button onClick="append('9')">9</button>
+                <button onClick="append('*')">*</button>
+            </div>
+            <div class="row">
+                <button onClick="append('4')">4</button>
+                <button onClick="append('5')">5</button>
+                <button onClick="append('6')">6</button>
+                <button onClick="append('-')">-</button>
+            </div>
+            <div class="row">
+                <button onClick="append('1')">1</button>
+                <button onClick="append('2')">2</button>
+                <button onClick="append('3')">3</button>
+                <button onClick="append('+')">+</button>
+            </div>
+            <div class="row">
+                <button onClick="del()">Del</button>
+                <button onClick="append('0')">0</button>
+                <button onClick="append('.')">.</button>
+                <button onClick="calculate()">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
