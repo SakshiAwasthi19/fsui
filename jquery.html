@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery form</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.21.0/dist/jquery.validate.min.js"></script>
+</head>
+<body>
+    <h1>Simple JQuery Validation form</h1>
+    <div>
+    <form id="myForm">
+        <label for="name">Name:</label><br>
+        <input type="text" name="name" id="name"><br>
+        <label for="email">Email:</label><br>
+        <input type="email" name="email" id="email"><br>
+        <label for="phone">Phone No:</label><br>
+        <input type="text" name="phone" id="phone"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" name="password" id="password"><br>
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $("#myForm").validate({
+                rules:{
+                    name:{
+                        required:true,
+                        minlength:3
+                    },
+                    email:{
+                        required:true,
+                        email:true
+                    },
+                    phone:{
+                        required:true,
+                        digits:true,
+                        minlength:10,
+                        maxlength:10
+                    },
+                    password:{
+                        required:true,
+                        minlength:6
+                    }
+                },
+                message:{
+                    name:{
+                        required:"please enter your name",
+                        minlength:"please enter at least 3 characters"
+                    },
+                    email:{
+                        required:"please enter your email",
+                        email:"please enter a valid email address"
+                    },
+                    phone:{
+                        required:"please enter your phone number",
+                        digits:"please enter valid digits only",
+                        minlength:"please enter 10-digit phone number",
+                        maxlength:"please enter 10-digit phone number"
+                    },
+                    password:{
+                        required:"please enter valid password",
+                        minlength:"please enter at least 6 characters"
+                    }
+                },
+                submitHandler:function(form){
+                    alert("form submitted successfully!");
+                    form.submit();
+                }
+            });
+        });
+    </script>
+</body>
+</html>
